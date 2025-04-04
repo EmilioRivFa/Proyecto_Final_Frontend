@@ -1,6 +1,5 @@
 form {
     background-color: white;
-    padding: 10px;
     border-radius: 5px;
     /* Centrar el formulario */
     position: absolute;
@@ -8,14 +7,34 @@ form {
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
+    flex-direction: column; /* Coloca los elementos uno debajo del otro */
     justify-content: center;
     align-items: center;
     width: 300px; /* Ajusta según sea necesario */
+    padding: 20px; /* Añade espacio interno */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.678); /* Opcional: sombra para mejor apariencia */
 }
-input{
+input {
     width: 100%;
+    height: auto;
     padding: 10px;
-    margin: 5px 0;
+    margin: 20px 0;
     border: 1px solid #ccc;
     border-radius: 4px;
+    border-color: blue;
+}
+button{
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    margin: 0.5px 0;
+    border: none;
+    border-radius: 4px;
+    background-color: blue;
+    color: white;
+    cursor: pointer;
+}
+button:hover {
+    /* Cambia el color de fondo al pasar el mouse */
+    background-color: #b35100; /* Cambia el color de fondo al pasar el mouse */
 }
