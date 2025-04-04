@@ -1,0 +1,21 @@
+form {
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    /* Centrar el formulario */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px; /* Ajusta según sea necesario */
+}
+input{
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
