@@ -1,0 +1,15 @@
+.contend-form{
+    background: blue;
+    position: absolute;
+    width: 400px;
+    padding: 8px;
+    font-family: 'Arial', Courier, monospace;
+    border-radius: 5px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.678);
+}
