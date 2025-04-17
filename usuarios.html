@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Document</title>
+  <style>
+    .tabla {
+      display: none;
+      margin-top: 20px;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    .tabla th, .tabla td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: center;
+    }
+
+    .tabla.active {
+      display: table;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Botones -->
+  <button onclick="mostrarTabla('usuarios')">Usuarios Totales</button>
+  <button onclick="mostrarTabla('vega')">La Vega</button>
+  <button onclick="mostrarTabla('cerrito')">El Cerrito</button>
+  <button onclick="mostrarTabla('encinos')">Los Encinos</button>
+  <button onclick="mostrarTabla('oxthoc')">Oxthoc</button>
+  <button onclick="mostrarTabla('colonia')">La Colonia</button>
+
+  <!-- Tablas ocultas -->
+  <table id="usuarios" class="tabla">
+    <tr><th>Nombre</th><th>Medidor</th></tr>
+    <tr><td>Juan</td><td>001</td></tr>
+  </table>
+
+  <table id="vega" class="tabla">
+    <tr><th>Nombre</th><th>Medidor</th></tr>
+    <tr><td>Lucía</td><td>101</td></tr>
+  </table>
+
+  <table id="cerrito" class="tabla">
+    <tr><th>Nombre</th><th>Medidor</th></tr>
+    <tr><td>Carlos</td><td>201</td></tr>
+  </table>
+
+  <table id="encinos" class="tabla">
+    <tr><th>Nombre</th><th>Medidor</th></tr>
+    <tr><td>María</td><td>301</td></tr>
+  </table>
+
+  <table id="oxthoc" class="tabla">
+    <tr><th>Nombre</th><th>Medidor</th></tr>
+    <tr><td>Pedro</td><td>401</td></tr>
+  </table>
+
+  <table id="colonia" class="tabla">
+    <tr><th>Nombre</th><th>Medidor</th></tr>
+    <tr><td>Ana</td><td>501</td></tr>
+  </table>
+
+  <script>
+    function mostrarTabla(id) {
+      const tablas = document.querySelectorAll('.tabla');
+      tablas.forEach(tabla => tabla.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
