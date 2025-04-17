@@ -9,37 +9,42 @@
 <body>
     <script src="js/logicCobro.js"></script>
     
-    <form class="contend-form">
+    <form class="contend-form" id="formulario">
+        <img src="public/logoSoya.png" alt="Logo" class="logo">
+        <img src="public/istockphoto-1539948906-612x612.jpg" alt="Agua" class="agua">
         <h1>SISTEMA DE COBRO DE AGUA</h1>
         <h2>SAN JUAN DAXTHI SOYANIQUILPAN, MEX.</h2>
 
         <label>FECHA: </label>
-        <input type="date">
+        <input type="date" id="fecha">
         <br>
 
         <label>NO. MEDIDOR:</label>
-        <input type="number" >
+        <input type="number" id="numeroMedidor">
         <br>
 
         <label>Nombre:</label>
-        <input type="text" placeholder="Con apellidos">
+        <input type="text" placeholder="Con apellidos" id="nombreUsuario">
         <br>
 
         <label>Lectura Anterior</label>
-        <input type="number">
+        <input type="number" id="lecturaAnterior">
         <br>
 
         <label>Metros Consumidos</label>
-        <input type="number">
+        <input type="number" id="metrosConsumidos">
         <br>
 
         <label>Falta De Asamblea</label>
-        <input type="checkbox">
+        <input type="checkbox" id="faltaAsamblea">
         <br>
 
         <label>Multa Por Retraso</label>
-        <input type="checkbox">
+        <input type="checkbox" id="multaRetraso">
         <br>        
+        <label id="Pago">Total a Pagar</label>
+        
+        <button id="button">Pagar</button>
         
         
 

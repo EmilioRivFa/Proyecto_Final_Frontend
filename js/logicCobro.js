@@ -1,3 +1,17 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const formulario = document.getElementById('formulario');
+    const nombreInput = document.getElementById('nombreUsuario');
+    const metrosInput = document.getElementById('metrosConsumidos');
+    const medidorInput = document.getElementById('numeroMedidor');
+    const lecturaAnteriorInput = document.getElementById('lecturaAnterior');
+    //const lecturaActualInput = document.getElementById('lecturaActual');
+    const fechaInput = document.getElementById('fecha')
+    const asambleaInput = document.getElementById('faltaAsamblea')
+    const multaInput = document.getElementById('multaRetraso')
+
+    
+})
+
 let metrosGastados = prompt('¿Cuántos metros gastaste?');
 metrosGastados = parseFloat(metrosGastados); // Asegurar que sea número
 
@@ -14,7 +28,7 @@ function calcularPrecio(metros) {
         costo = (15 * 9) + ((metros - 15) * 16);
     } else {
         // primeros 15 a $9, los siguientes 15 a $16, el resto a $20
-        costo = (15 * 9) + (15 * 16) + ((metros - 30) * 20);
+        costo = (15 * 9) + (15 * 16) + ((metros - 20) * 20);
     }
 
     return costo;

@@ -1,8 +1,8 @@
 .contend-form{
-    background: blue;
+    background: white;
     position: absolute;
     width: 400px;
-    padding: 8px;
+    height: 570px;
     font-family: 'Arial', Courier, monospace;
     border-radius: 5px;
     top: 50%;
@@ -12,4 +12,52 @@
     flex-direction: column;
     justify-content: end;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.678);
+    margin-top: 7px;
+    margin-bottom: 10px;
+    padding-top: 0.1%;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+h1{
+    text-align: center;
+    font-size: 20px;
+    color: black;
+    margin-bottom: 10px;
+}
+#Pago{
+    color:Red
+
+}
+
+
+#button{
+    background: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    margin-top: 10px;
+}
+h2{
+    text-align: center;
+    font-size: 15px;
+    color: black;
+    margin-bottom: 10px;
+}
+.logo{
+    transform: translate(-1%, 75%);
+    width: 100px;
+    height: 100px;
+    padding-top:1%;
+    margin-top: 1px;
+}
+
+.agua{
+    transform: translate(300%, 2%);
+    width: 100px;
+    height: 90px;
+    padding-top:0.1px
 }

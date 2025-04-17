@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulario con imágenes</title>
+  <style>
+    .contenedor {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+    }
+
+    .imagen {
+      width: 150px;
+      height: auto;
+    }
+
+    .formulario {
+      flex: 1;
+      margin: 0 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="contenedor">
+    <img src="imagen-izquierda.jpg" alt="Izquierda" class="imagen">
+
+    <form class="formulario">
+      <h2>Formulario</h2>
+      <label for="nombre">Nombre:</label><br>
+      <input type="text" id="nombre" name="nombre"><br><br>
+
+      <label for="email">Correo:</label><br>
+      <input type="email" id="email" name="email"><br><br>
+
+      <input type="submit" value="Enviar">
+    </form>
+
+    <img src="imagen-derecha.jpg" alt="Derecha" class="imagen">
+  </div>
+
+</body>
+</html>

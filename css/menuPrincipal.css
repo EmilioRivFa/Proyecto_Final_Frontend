@@ -1,0 +1,15 @@
+header{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: auto;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-top: 7px;
+    padding-right: 10px;
+    margin-top: 8px;
+    font-family: 'Arial', Courier, monospace;
+    border-radius: 5px;
+    top: 3%;
+    left: 50%;
+    background-color: aqua;
+}
