@@ -4,41 +4,59 @@ document.addEventListener('DOMContentLoaded', () => {
     const metrosInput = document.getElementById('metrosConsumidos');
     const medidorInput = document.getElementById('numeroMedidor');
     const lecturaAnteriorInput = document.getElementById('lecturaAnterior');
-    //const lecturaActualInput = document.getElementById('lecturaActual');
+    const lecturaActualInput = document.getElementById('lecturaActual');
     const fechaInput = document.getElementById('fecha')
     const asambleaInput = document.getElementById('faltaAsamblea')
     const multaInput = document.getElementById('multaRetraso')
-
+    const resultadoTotal = document.getElementById('resultadoTotal');
+    const botonPagar = document.getElementById('button')
     
-})
 
-let metrosGastados = prompt('¿Cuántos metros gastaste?');
-metrosGastados = parseFloat(metrosGastados); // Asegurar que sea número
 
-let total = 0;
-let mantenimiento = 20;
+    // Obtener la fecha actual en formato YYYY-MM-DD
+    const hoy = new Date();
+    const año = hoy.getFullYear();
+    const mes = String(hoy.getMonth() + 1).padStart(2, '0'); // Los meses van de 0 a 11
+    const dia = String(hoy.getDate()).padStart(2, '0');
+    const fechaActual = `${año}-${mes}-${dia}`;
+    
+    // Asignar la fecha al input
+    document.getElementById('fecha').value = fechaActual;
 
-function calcularPrecio(metros) {
-    let costo = 0;
 
-    if (metros <= 15) {
-        costo = metros * 9;
-    } else if (metros <= 30) {
-        // primeros 15 a $9, el resto (hasta 30) a $16
-        costo = (15 * 9) + ((metros - 15) * 16);
-    } else {
-        // primeros 15 a $9, los siguientes 15 a $16, el resto a $20
-        costo = (15 * 9) + (15 * 16) + ((metros - 20) * 20);
-    }
 
-    return costo;
-}
 
-total = calcularPrecio(metrosGastados) + mantenimiento;
+    //OPERACION DEL PAGO
 
-console.log("Tus metros son: " + metrosGastados);
-console.log("Tu pago total es: $" + total);
 
+    botonPagar.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        let lecturaActual = parseFloat(lecturaActualInput.value);
+        let total = 0;
+        const mantenimiento = 20;
+
+        function calcularPrecio(metros) {
+            let costo = 0;
+            if (metros <= 15) {
+                costo = metros * 9;
+            } else if (metros <= 30) {
+                costo = (15 * 9) + ((metros - 15) * 16);
+            } else {
+                costo = (15 * 9) + (15 * 16) + ((metros - 30) * 20);
+            }
+            return costo;
+        }
+
+        total = calcularPrecio(lecturaActual) + mantenimiento;
+
+        if (asambleaInput.checked) total += 200;
+        if (multaInput.checked) total += 50;
+
+        // Mostrar el resultado en pantalla
+        resultadoTotal.textContent = `Total a Pagar: $${total.toFixed(2)}`;
+    });
+});
 
 
 
@@ -51,3 +69,8 @@ console.log("Tu pago total es: $" + total);
 
 
 //Mas mantenimineto 20 por mes
+
+    
+    
+    
+

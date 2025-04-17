@@ -15,36 +15,37 @@
         <h1>SISTEMA DE COBRO DE AGUA</h1>
         <h2>SAN JUAN DAXTHI SOYANIQUILPAN, MEX.</h2>
 
-        <label>FECHA: </label>
-        <input type="date" id="fecha">
+        <label for="fecha">FECHA: </label>
+        <input type="date" id="fecha" name="fecha">
         <br>
 
         <label>NO. MEDIDOR:</label>
-        <input type="number" id="numeroMedidor">
+        <input type="text" id="numeroMedidor">
         <br>
 
         <label>Nombre:</label>
         <input type="text" placeholder="Con apellidos" id="nombreUsuario">
         <br>
-
-        <label>Lectura Anterior</label>
+        <label id="">Lectura Anterior:</label>
         <input type="number" id="lecturaAnterior">
         <br>
 
-        <label>Metros Consumidos</label>
-        <input type="number" id="metrosConsumidos">
+        <label class="lMetrosConsumidos">Lectura Actual:</label>
+        <input type="number" id="lecturaActual">
+
+        <label class="">Metros Consumidos:</label>
         <br>
 
         <label>Falta De Asamblea</label>
         <input type="checkbox" id="faltaAsamblea">
         <br>
 
-        <label>Multa Por Retraso</label>
+        <label class="Multa">Multa Por Retraso</label>
         <input type="checkbox" id="multaRetraso">
-        <br>        
-        <label id="Pago">Total a Pagar</label>
-        
+       
+        <p id="resultadoTotal" class="resultado-total"></p>
         <button id="button">Pagar</button>
+        
         
         
 
