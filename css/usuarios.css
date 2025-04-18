@@ -1,0 +1,45 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.tabla {
+    display: none;
+    margin-top: 20px;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.tabla th, .tabla td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+}
+
+.tabla.active {
+    display: table;
+}
+
+
+button{
+    text-align: center;
+    width: 140px;
+    padding: 10px;
+}
+
+button:hover{
+    background-color: red;
+    color: yellow;
+    transition: all;
+}
+
+#Totales:hover{
+    background-color: blue;
+    color: yellow;
+    transition: all;
+}
+#vega:hover{
+    background-color: greenyellow;
+}
+
+#cerrito:hover{
+    background-color: #E48664;
+}
