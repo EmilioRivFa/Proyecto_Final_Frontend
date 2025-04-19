@@ -6,7 +6,7 @@ const loginForm = document.getElementById("loginForm");
             const usuario = document.getElementById("User").value;
             const password = document.getElementById("Password").value;
 
-            if (usuario === "Comite1" && password === "Daxthi21") {
+            if (usuario === "Comite1" && password === "Daxthi12345") {
                 // Redirige si las credenciales son correctas
                 window.location.href = "menuPrincipal.html";
             } else {

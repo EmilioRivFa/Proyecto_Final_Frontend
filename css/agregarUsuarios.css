@@ -46,6 +46,18 @@ button:hover {
     left:0;
     right:0;
 }
+#Salir{
+    background-color: red;
+    color: white;
+    width: 80px;
+    transform: translate(100, 160);
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    margin-top: 0px;
+  }
 label{
     transform: translate(0%, -20%);
 }

@@ -64,6 +64,7 @@ body {
   #Salir{
     background-color: red;
     color: white;
+    transform: translate(-10%, -160%);
   }
   
   .tabla {
