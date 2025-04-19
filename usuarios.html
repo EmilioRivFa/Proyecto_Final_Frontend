@@ -1,105 +1,52 @@
+<!--Aqui estaran todos los usuarios-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <link rel="stylesheet" href="css/usuarios.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+   <link rel="stylesheet" href="css/usuarios.css">
+    <title>Usuarios</title>
 </head>
 <body>
-
-  <!-- Botones CAMBIAR LOS ID-->
-  <button id="Totales" onclick="mostrarTabla('usuarios')">Usuarios Totales</button>
-  <button id="vega" onclick="mostrarTabla('vega')">La Vega</button>
-  <button id="cerrito" onclick="mostrarTabla('cerrito')">El Cerrito</button>
-  <button id="encinos"onclick="mostrarTabla('encinos')">Los Encinos</button>
-  <button id="oxthoc"onclick="mostrarTabla('oxthoc')">Oxthoc</button>
-  <button id="colonia"onclick="mostrarTabla('colonia')">La Colonia</button>
-
-  <!-- Tablas ocultas -->
-  <table id="usuarios" class="tabla">
-    <tr>
-      <th>No.Medidor</th>
-      <th>Nombre</th><th>Apellido</th>
-      <th>Enero</th>
-      <th>Febrero</th>
-      <th>Marzo</th>
-      <th>Abril</th>
-      <th>Mayo</th>
-      <th>Junio</th>
-      <th>Julio</th>
-      <th>Agosto</th>
-      <th>Septiembre</th>
-      <th>Octubre</th>
-      <th>Noviembre</th>
-      <th>Diciembre</th>
-    </tr>
+    <h1 class="titulo">Usuarios Totales</h1>
+    <button id="Salir">Exit</button>
+    <i class="bi bi-arrow-return-left" id="Salir"></i>
+    <i class="bi bi-arrow-return-left"></i>
+    <div class="botones">
+       
+        <button id="Totales" onclick="mostrarTabla('usuarios')">Usuarios Totales</button>
+        <button id="La_vega" onclick="mostrarTabla('vega')">La Vega</button>
+        <button id="El_cerrito" onclick="mostrarTabla('cerrito')">El Cerrito</button>
+        <button id="Los_encinos" onclick="mostrarTabla('encinos')">Los Encinos</button>
+        <button id="Sn_oxthoc" onclick="mostrarTabla('oxthoc')">Oxthoc</button>
+        <button id="La_colonia" onclick="mostrarTabla('colonia')">La Colonia</button>    
+        
+    </div>
 
 
-    <tr><td>Lucía</td><td>Rivera</td><td>101</td></tr>
-  </table>
+    <table id="usuarios" class="tabla activa">
+        <thead>
+            <tr>
+                <th>NO.Medidor</th>
+                <th>Nombre</th>
+                <th>Apellido Paterno</th>
+                <th>Apellido Materno</th>
+                <th>Direccion</th>
+                <th>Edad</th>
+                <th>Numero Telefonico</th>
+            </tr>
+        </thead>
 
-  <table id="vega" class="tabla">
+        <tbody>
+            <td>102</td>
+            <td>Pedro</td>
+            <td>Martinez</td>
+            <td>Rivera</td>
 
-    <tr>
-      <th>No.Medidor</th>
-      <th>Nombre</th><th>Apellido</th>
-      <th>Enero</th>
-      <th>Febrero</th>
-      <th>Marzo</th>
-      <th>Abril</th>
-      <th>Mayo</th>
-      <th>Junio</th>
-      <th>Julio</th>
-      <th>Agosto</th>
-      <th>Septiembre</th>
-      <th>Octubre</th>
-      <th>Noviembre</th>
-      <th>Diciembre</th>
-    </tr>
-
-
-    <tr><td>Lucía</td><td>Rivera</td><td>101</td></tr>
-  </table>
-
-  <table id="cerrito" class="tabla">
-    <tr>
-      <th>No.Medidor</th>
-      <th>Nombre</th><th>Apellido</th>
-      <th>Enero</th>
-      <th>Febrero</th>
-      <th>Marzo</th>
-      <th>Abril</th>
-      <th>Mayo</th>
-      <th>Junio</th>
-      <th>Julio</th>
-      <th>Agosto</th>
-      <th>Septiembre</th>
-      <th>Octubre</th>
-      <th>Noviembre</th>
-      <th>Diciembre</th>
-    </tr>
-
-
-    <tr><td>Lucía</td><td>Rivera</td><td>101</td></tr>
-  </table>
-
-  <table id="encinos" class="tabla">
-    <tr><th>Nombre</th><th>Medidor</th></tr>
-    <tr><td>María</td><td>301</td></tr>
-  </table>
-
-  <table id="oxthoc" class="tabla">
-    <tr><th>Nombre</th><th>Medidor</th></tr>
-    <tr><td>Pedro</td><td>401</td></tr>
-  </table>
-
-  <table id="colonia" class="tabla">
-    <tr><th>Nombre</th><th>Medidor</th></tr>
-    <tr><td>Ana</td><td>501</td></tr>
-  </table>
-
+        </tbody>
+    </table>
 <script src="js/usuarios.js"></script>
-
 </body>
 </html>
