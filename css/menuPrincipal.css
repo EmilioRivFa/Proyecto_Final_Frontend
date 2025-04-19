@@ -11,5 +11,50 @@ header{
     border-radius: 5px;
     top: 3%;
     left: 50%;
-    background-color: aqua;
+
 }
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f2f4f8;
+    margin:0;
+    padding: 20px;
+
+}
+
+button{
+    padding: 12px 20px;
+    border:none;
+    border-radius: 8px;
+    background-color: #e0e0e0;
+    color: #333;
+    cursor: pointer;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+
+}
+#usuarios:hover {
+    background-color: #007BFF;
+    color: white;
+  }
+  
+  #lista-deudores:hover {
+    background-color: #28A745;
+    color: white;
+  }
+  
+  #lecturas-anuales:hover {
+    background-color: #DC3545;
+    color: white;
+  }
+  
+  #menu-pago:hover {
+    background-color: #FD7E14;
+    color: white;
+  }
+  #agregar-usuarios:hover {
+    background-color: #6f42c1;
+    color: white;
+  }
+  

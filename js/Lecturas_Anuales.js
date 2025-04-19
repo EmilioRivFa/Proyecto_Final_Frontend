@@ -12,11 +12,6 @@ filas.forEach(fila => {
   const numero = celdas[0].textContent;
   const nombre = celdas[1].textContent;
   const apellido = celdas[2].textContent;
-  const apellido_materno=celdas[3].textContent;
-  const Direccion=celdas[4].textContent;
-  const Edad=celdas[5].textContent;
-  const No_Telefono=celdas[6].textContent;
-
 
   // Ejemplo: Enero (posición 3)
   const eneroInput = celdas[3].querySelector(".metros-input");

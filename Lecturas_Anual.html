@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="css/Lecturas_Anuales.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Usuarios por Zona</title>
+</head>
+<body>
+  <button onclick="window.location.href='menuPrincipal.html' " id="Salir">EXIT</button>
+
+  <h1 class="titulo">Lecturas Anuales</h1>
+
+  <div class="botonera">
+    <button id="Totales" onclick="mostrarTabla('usuarios')">Usuarios Totales</button>
+    <button id="La_vega" onclick="mostrarTabla('vega')">La Vega</button>
+    <button id="El_cerrito" onclick="mostrarTabla('cerrito')">El Cerrito</button>
+    <button id="Los_encinos" onclick="mostrarTabla('encinos')">Los Encinos</button>
+    <button id="Sn_oxthoc" onclick="mostrarTabla('oxthoc')">Oxthoc</button>
+    <button id="La_colonia" onclick="mostrarTabla('colonia')">La Colonia</button>
+  </div>
+    <table id="usuarios" class="tabla active">
+      <thead>
+        <tr>
+          <th>No. Medidor</th>
+          <th>Nombre</th>
+          <th>Apellidos</th>
+          <th>Enero</th>
+          <th>Febrero</th>
+          <th>Marzo</th>
+          <th>Abril</th>
+          <th>Mayo</th>
+          <th>Junio</th>
+          <th>Julio</th>
+          <th>Agosto</th>
+          <th>Septiembre</th>
+          <th>Octubre</th>
+          <th>Noviembre</th>
+          <th>Diciembre</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>101</td>
+          <td>Lucía</td>
+          <td>Rivera</td>
+        
+          <!-- Ejemplo Enero -->
+          <td>
+            <div class="consumo-mes">
+              <input type="number" class="metros-input" value="11" min="0"> m³
+              <input type="checkbox" class="mantenimiento-check" checked>
+            </div>
+          </td>
+        
+        
+          <!-- Repetir para cada mes... -->
+        </tr>
+        <td>102</td>
+        <td>Pedro</td>
+        <td>Martinez</td>
+        
+        
+      </tbody>
+    </table>
+    
+  
+  <!-- Tablas -->
+  <!-- ... (sin cambios en el contenido de las tablas) ... -->
+
+  <script src="js/Lecturas_Anuales.js"></script>
+</body>
+</html>

@@ -1,25 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar sesión</title>
     <link rel="stylesheet" href="/css/index.css">
-    <title>Iniciar sesion</title>
 </head>
 <body>
-    <h1>Iniciar sesion</h1>
-    <form>
-        <label class="User">Ingresa el usuario</label>
-        <input id="User" type="text" placeholder="Ingrese el usuario">
+    <h1>Iniciar sesión</h1>
+    <form id="loginForm">
+        <label for="User">Ingresa el usuario</label>
+        <input id="User" type="text" placeholder="Ingrese el usuario" required>
         <br>
-        <label>Ingresa la contraseña</label>
-        <input type="password" placeholder="Ingrese la contraseña">
+        <label for="Password">Ingresa la contraseña</label>
+        <input id="Password" type="password" placeholder="Ingrese la contraseña" required>
         <br>
-        <button type="submit">Iniciar sesion</button>
+        <button type="submit">Iniciar sesión</button>
         <br>
-        <button type="button">Crear cuenta</button>
+        <button type="button" onclick="crearCuenta()">Crear cuenta</button>
         <br>
-        <button type="button">Recuperar contraseña</button>
+        <button type="button" onclick="recuperarContrasena()">Recuperar contraseña</button>
     </form>
+
+    <script src="js/index.js"></script>
 </body>
 </html>
