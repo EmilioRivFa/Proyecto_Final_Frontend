@@ -18,7 +18,6 @@ filas.forEach(fila => {
   const No_Telefono=celdas[6].textContent;
 
 
-  // Ejemplo: Enero (posición 3)
   const eneroInput = celdas[3].querySelector(".metros-input");
   const eneroCheck = celdas[3].querySelector(".mantenimiento-check");
 
