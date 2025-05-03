@@ -1,139 +1,165 @@
-.contend-form{
-    background: white;
-    position: absolute;
-    width: 400px;
-    height: 660px;
+
+body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    border-radius: 5px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    background-color: #f2f6fc;
     display: flex;
-    flex-direction: column;
-    justify-content: end;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.678);
-    margin-top: 0px;
-    margin-bottom: 0px;
-    padding-top: 0.1%;
-    padding-bottom: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-h1{
-    text-align: center;
-    font-size: 20px;
-    color: black;
-    margin-bottom: 10px;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
 }
 
-.resultado-total {
-    font-size: 20px;
+form {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
     font-weight: bold;
-    color:Red;
-    margin-top: 0px;
+    color: #555;
 }
 
-
-#button{
-    background: #4CAF50;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 15px;
-    margin-top: 0px;
+input[type="text"],
+input[type="number"],
+input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
 }
-#Salir{
-    background-color: red;
-    color: white;
-    transform: translate(100, 160);
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus {
+    border-color: #1976d2;
+    outline: none;
+}
+
+input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+.checkbox-group {
+    margin-top: 15px;
     font-size: 15px;
-    margin-top: 0px;
-    transform: translate(145,100);
-  }
-h2{
+    color: #444;
+}
+
+#resultadoTotal {
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #2e7d32;
     text-align: center;
-    font-size: 15px;
-    color: black;
-    margin-bottom: 10px;
 }
-.logo{
+
+button {
+    display: inline-block;
+    padding: 10px 18px;
     margin-top: 20px;
-    transform: translate(-1%, 75%);
-    width: 70px;
-    height: 100px;
-    padding-top:1%;
-   
+    margin-right: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: #1976d2;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-.agua{
-    transform: translate(300%, 2%);
-    width: 100px;
-    height: 90px;
-    padding-top:0.1px
-}
-input{
-    border-radius: 3px;
+button:hover {
+    background-color: #0d47a1;
 }
 
-#lecturaAnterior, #lecturaActual{
-    width: 40px;
-    padding: 2px;
-    margin-bottom: 0px;
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
 }
 
-#lecturaActual{
-    transform: translate(650%, -350%);
-}
-#lecturaAnterior{
-    transform: translate(250%, -90%);
-    margin-bottom: 0px;
+.button-group {
+    text-align: center;
 }
 
-.lMetrosConsumidos{
-    transform: translate(50%, -325%);
-    margin-bottom: 0px;
+/* Estilo para agrandar y personalizar los checkboxes */
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
 }
 
-#faltaAsamblea{
-    transform: translate(600%, -100%);
-    margin-bottom: 0px;
-}
-#multaRetraso{
-    transform: translate(1480%, -365%);
-    margin-bottom: 0px;
+.checkbox-group label:hover {
+    background-color: #e3f2fd;
 }
 
 input[type="checkbox"] {
     appearance: none;
-    width: 25px;
-    padding: 10px;
-    height: 25px;
+    width: 24px;
+    height: 24px;
+    border: 2px solid #1976d2;
+    border-radius: 6px;
     background-color: white;
-    border: 2px solid #333;
-    border-radius: 4px;
-    cursor: pointer;
+    transition: all 0.2s ease;
     position: relative;
-    margin-bottom: 0px;
 }
 
-input[type="checkbox"]:checked::before {
+input[type="checkbox"]:checked {
+    background-color: #1976d2;
+    border-color: #0d47a1;
+}
+
+input[type="checkbox"]:checked::after {
     content: '✔';
+    color: white;
+    font-size: 18px;
     position: absolute;
     top: 0;
     left: 5px;
-    font-size: 20px;
-    color: green;
-    margin-bottom: 0px;
-}
-.Multa{
-    transform: translate(55%, -340%);
-    padding-bottom: 0px;
-
+    transform: translateY(-2px);
 }
 
+
+
+.btn-calcular {
+    background-color: #388e3c; /* verde */
+}
+
+.btn-calcular:hover {
+    background-color: #2e7d32;
+}
+
+.btn-imprimir {
+    background-color: #f9a825; /* amarillo */
+    color: #000;
+}
+
+.btn-imprimir:hover {
+    background-color: #f57f17;
+    color: #000;
+}
+
+.btn-salir {
+    background-color: #e53935; /* rojo */
+}
+
+.btn-salir:hover {
+    background-color: #b71c1c;
+}

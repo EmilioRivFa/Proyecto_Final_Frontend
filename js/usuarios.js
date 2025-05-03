@@ -79,47 +79,6 @@ function habilitarEdicion(botonEditar) {
   `;
 }
 
-function cancelarEdicion(botonCancelar, valores) {
-  const fila = botonCancelar.closest('tr');
-  fila.innerHTML = `
-    <td>${valores.id_Usuarios}</td>
-    <td>${valores.nombre}</td>
-    <td>${valores.Apellido_1}</td>
-    <td>${valores.Apellido_2}</td>
-    <td>
-      <button class="btn btn-sm btn-warning me-1" onclick="habilitarEdicion(this)">Editar</button>
-      <button class="btn btn-sm btn-danger" onclick="eliminarUsuario('${valores.id_Usuarios}')">Eliminar</button>
-    </td>
-  `;
-}
-
-async function guardarCambios(botonGuardar, id) {
-  const fila = botonGuardar.closest('tr');
-  const inputs = fila.querySelectorAll('input');
-
-  const usuarioEditado = {
-    nombre: inputs[0].value,
-    Apellido_1: inputs[1].value,
-    Apellido_2: inputs[2].value
-  };
-
-  try {
-    const response = await fetch(`http://localhost:3000/${obtenerEndpointActual()}/${id}`, {
-
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(usuarioEditado)
-    });
-
-    if (!response.ok) throw new Error("Error al guardar los cambios");
-
-    alert('Usuario actualizado correctamente');
-    mostrarTabla(obtenerEndpointActual()); // Recarga los datos
-  } catch (error) {
-    console.error("Error al guardar los cambios:", error);
-    alert("No se pudieron guardar los cambios.");
-  }
-}
 
 // Función para eliminar un usuario
 async function eliminarUsuario(endpoint, id) {
