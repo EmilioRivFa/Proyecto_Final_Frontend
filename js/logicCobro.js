@@ -1,3 +1,4 @@
+//Logica Cobro.js
 document.addEventListener('DOMContentLoaded', () => {
     const fechaInput = document.getElementById('fecha');
     const nombreInput = document.getElementById('nombreUsuario');
