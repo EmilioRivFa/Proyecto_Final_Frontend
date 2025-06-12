@@ -1,6 +1,6 @@
 header{
     position: absolute;
-    transform: translate(-50%, -50%);
+    transform: translate(0%, 0%);
     width: auto;
     padding-left: 10px;
     padding-bottom: 10px;
@@ -14,6 +14,54 @@ header{
 
 }
 
+ /* Ícono principal enorme */
+    .icono-grande {
+      font-size: 120px;
+      display: block;
+      text-align: center;
+      margin: 40px auto;
+      color: #333; /* Puedes cambiarlo a otro color */
+    }
+
+    /* Estilos base para botones */
+    #contenido {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    #usuarios-t:hover {
+    background-color: purple;
+    color: white;
+  }
+
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      cursor: pointer;
+      border: none;
+      background-color: #007bff;
+      color: white;
+      border-radius: 8px;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+button i {
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+#persona{
+
+  transform: translate(100, 50);
+  width: 500px;
+  padding: 500px
+}
 body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: #f2f4f8;
@@ -58,3 +106,45 @@ button{
     color: white;
   }
   
+      body {
+        font-family: sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+      }
+
+      /* Ícono grande */
+      .icono-principal {
+        font-size: 140px;
+        text-align: center;
+        display: block;
+        margin: 50px auto 30px;
+        color: #333;
+      }
+
+
+      /* Botones */
+      button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 15px 25px;
+        font-size: 18px;
+        border-radius: 10px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        transition: background-color 0.3s;
+        min-width: 220px;
+        justify-content: center;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+
+      #menu-contend {
+        padding: 20px;
+        text-align: center;
+      }
