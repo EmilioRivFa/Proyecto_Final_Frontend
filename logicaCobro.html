@@ -1,56 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/logicaCobro.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cobro</title>
+    <title>Sistema de Cobro</title>
 </head>
 <body>
-    <script src="js/logicCobro.js"></script>
-        <button onclick="window.location.href='menuPrincipal.html' " id="Salir">Exit</button>
-   
     <form class="contend-form" id="formulario">
-        <img src="public/logoSoya.png" alt="Logo" class="logo">
-        <img src="public/istockphoto-1539948906-612x612.jpg" alt="Agua" class="agua">
-        <h1>SISTEMA DE COBRO DE AGUA</h1>
-        <h2>SAN JUAN DAXTHI SOYANIQUILPAN, MEX.</h2>
+        <div style="text-align: center;">
+            <img src="public/logoSoya.png" alt="Logo" class="logo" style="width: 80px; margin-bottom: 10px;">
+            <img src="public/istockphoto-1539948906-612x612.jpg" alt="Agua" class="agua" style="width: 100px; margin-bottom: 10px;">
+        </div>
+        <h2>SISTEMA DE COBRO DE AGUA</h2>
+        <p style="text-align: center; margin-bottom: 20px; color: #777;">San Juan Daxthi, Soyaniquilpan, México</p>
 
-        <label for="fecha">FECHA: </label>
+        <label for="fecha">Fecha:</label>
         <input type="date" id="fecha" name="fecha">
-        <br>
 
-        <label>NO. MEDIDOR:</label>
+        <label for="numeroMedidor">No. Medidor:</label>
         <input type="text" id="numeroMedidor">
-        <br>
 
-        <label>Nombre:</label>
-        <input type="text" placeholder="Con apellidos" id="nombreUsuario">
-        <br>
-        <label id="">Lectura Anterior:</label>
+        <label for="nombreUsuario">Nombre del Usuario:</label>
+        <input type="text" id="nombreUsuario" placeholder="Nombre completo con apellidos">
+
+        <label for="lecturaAnterior">Lectura Anterior:</label>
         <input type="number" id="lecturaAnterior">
-        <br>
 
-        <label class="lMetrosConsumidos">Lectura Actual:</label>
+        <label for="lecturaActual">Lectura Actual:</label>
         <input type="number" id="lecturaActual">
 
-        <label class="">Metros Consumidos:</label>
-        <br>
+        <div class="checkbox-group">
+            <label><input type="checkbox" id="faltaAsamblea">Falta de Asamblea</label>
+            <label><input type="checkbox" id="multaRetraso">Multa por Retraso</label>
+        </div>
 
-        <label>Falta De Asamblea</label>
-        <input type="checkbox" id="faltaAsamblea">
-        <br>
+        <p id="resultadoTotal"></p>
 
-        <label class="Multa">Multa Por Retraso</label>
-        <input type="checkbox" id="multaRetraso">
-       
-        <p id="resultadoTotal" class="resultado-total"></p>
-        <button id="button">Pagar</button>
+        <div class="button-group">
+            <button id="button" type="submit" class="btn-calcular">Calcular Pago</button>
+            <button type="button" id="btnImprimirPDF" class="btn-imprimir">Imprimir Ticket</button>
+            <button type="button" onclick="window.location.href='menuPrincipal.html'" class="btn-salir">Salir</button>
+        </div>
         
-        
-        
-
     </form>
 
+    <script src="js/logicCobro.js"></script>
 </body>
 </html>

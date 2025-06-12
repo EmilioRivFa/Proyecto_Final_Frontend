@@ -1,76 +1,80 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const formulario = document.getElementById('formulario');
+    const fechaInput = document.getElementById('fecha');
     const nombreInput = document.getElementById('nombreUsuario');
-    const metrosInput = document.getElementById('metrosConsumidos');
     const medidorInput = document.getElementById('numeroMedidor');
     const lecturaAnteriorInput = document.getElementById('lecturaAnterior');
     const lecturaActualInput = document.getElementById('lecturaActual');
-    const fechaInput = document.getElementById('fecha')
-    const asambleaInput = document.getElementById('faltaAsamblea')
-    const multaInput = document.getElementById('multaRetraso')
+    const asambleaInput = document.getElementById('faltaAsamblea');
+    const multaInput = document.getElementById('multaRetraso');
     const resultadoTotal = document.getElementById('resultadoTotal');
-    const botonPagar = document.getElementById('button')
-    
+    const botonPagar = document.getElementById('button');
+    const botonImprimir = document.getElementById('btnImprimirPDF');
 
+    fechaInput.value = new Date().toISOString().split('T')[0];
 
-    // Obtener la fecha actual en formato YYYY-MM-DD
-    const hoy = new Date();
-    const año = hoy.getFullYear();
-    const mes = String(hoy.getMonth() + 1).padStart(2, '0'); // Los meses van de 0 a 11
-    const dia = String(hoy.getDate()).padStart(2, '0');
-    const fechaActual = `${año}-${mes}-${dia}`;
-    
-    // Asignar la fecha al input
-    document.getElementById('fecha').value = fechaActual;
-
-
-
-
-    //OPERACION DEL PAGO
-
+    let totalCalculado = 0;
 
     botonPagar.addEventListener('click', (e) => {
-        e.preventDefault();
+        e.preventDefault(); // Evita el envío del formulario y la recarga de la página
 
-        let lecturaActual = parseFloat(lecturaActualInput.value);
-        let total = 0;
+        const lecturaAnterior = parseFloat(lecturaAnteriorInput.value);
+        const lecturaActual = parseFloat(lecturaActualInput.value);
+
+        if (isNaN(lecturaAnterior) || isNaN(lecturaActual) || lecturaActual < lecturaAnterior) {
+            alert("Por favor ingresa lecturas válidas.");
+            return;
+        }
+
+        const metros = lecturaActual - lecturaAnterior;
         const mantenimiento = 20;
 
         function calcularPrecio(metros) {
-            let costo = 0;
-            if (metros <= 15) {
-                costo = metros * 9;
-            } else if (metros <= 30) {
-                costo = (15 * 9) + ((metros - 15) * 16);
-            } else {
-                costo = (15 * 9) + (15 * 16) + ((metros - 30) * 20);
-            }
-            return costo;
+            if (metros <= 15) return metros * 9;
+            if (metros <= 30) return (15 * 9) + ((metros - 15) * 16);
+            return (15 * 9) + (15 * 16) + ((metros - 30) * 20);
         }
 
-        total = calcularPrecio(lecturaActual) + mantenimiento;
-
+        let total = calcularPrecio(metros) + mantenimiento;
         if (asambleaInput.checked) total += 200;
         if (multaInput.checked) total += 50;
 
-        // Mostrar el resultado en pantalla
-        resultadoTotal.textContent = `Total a Pagar: $${total.toFixed(2)}`;
+        totalCalculado = total;
+        resultadoTotal.textContent = `Total a Pagar: $${total.toFixed(2)} MXN`;
+    });
+
+    botonImprimir.addEventListener('click', () => {
+        if (totalCalculado === 0) {
+            alert("Por favor, calcula el total antes de intentar imprimir.");
+            return;
+        }
+
+        const fecha = fechaInput.value;
+        const nombre = nombreInput.value.trim();
+        const medidor = medidorInput.value.trim();
+        const lecturaAnterior = lecturaAnteriorInput.value;
+        const lecturaActual = lecturaActualInput.value;
+        const metros = parseFloat(lecturaActual) - parseFloat(lecturaAnterior);
+        const faltaAsamblea = asambleaInput.checked ? "Sí" : "No";
+        const multa = multaInput.checked ? "Sí" : "No";
+        const total = totalCalculado.toFixed(2);
+
+        if (!nombre || !medidor || isNaN(metros)) {
+            alert("Completa todos los datos antes de intentar imprimir.");
+            return;
+        }
+
+        const queryParams = new URLSearchParams({
+            fecha,
+            nombre,
+            medidor,
+            lecturaAnterior,
+            lecturaActual,
+            metros,
+            asamblea: faltaAsamblea,
+            multa,
+            total
+        });
+
+        window.open(`ticket.html?${queryParams.toString()}`, '_blank');
     });
 });
-
-
-
-
-
-// 0-15 = $9 pesos
-//16-30 = $16 pesos
-// 30-> = $20 pesos
-
-
-
-//Mas mantenimineto 20 por mes
-
-    
-    
-    
-

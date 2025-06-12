@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <title>Ticket de Pago</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <link rel="stylesheet" href="css/ticket.css"></link>
+</head>
+<body>
+    <div class="ticket" id="ticketPDF">
+        <img src="public/logoSoya.png" alt="Logo">
+        <h2>Recibo de Pago</h2>
+        
+        <p><strong>Fecha:</strong> <span id="pdfFecha"></span></p>
+        <p><strong>Nombre:</strong> <span id="pdfNombre"></span></p>
+        <p><strong>Medidor:</strong> <span id="pdfMedidor"></span></p>
+        
+        <div class="line"></div>
+
+        <p><strong>Lectura Anterior:</strong> <span id="pdfLecturaAnterior"></span></p>
+        <p><strong>Lectura Actual:</strong> <span id="pdfLecturaActual"></span></p>
+        <p><strong>Metros Consumidos:</strong> <span id="pdfMetros"></span></p>
+
+        <div class="line"></div>
+
+        <p><strong>Falta de Asamblea:</strong> <span id="pdfAsamblea"></span></p>
+        <p><strong>Multa por Retraso:</strong> <span id="pdfMulta"></span></p>
+
+        <h3>Total a Pagar: $<span id="pdfTotal"></span> MXN</h3>
+        
+        <div class="footer">
+            <p>Gracias por confiar en nosotros</p>
+            
+        </div>
+    </div>
+
+    <script>
+        // Función para obtener los parámetros de la URL
+        function getParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                fecha: params.get("fecha"),
+                nombre: params.get("nombre"),
+                medidor: params.get("medidor"),
+                lecturaAnterior: params.get("lecturaAnterior"),
+                lecturaActual: params.get("lecturaActual"),
+                metros: params.get("metros"),
+                asamblea: params.get("asamblea"),
+                multa: params.get("multa"),
+                total: params.get("total")
+            };
+        }
+
+        // Función para cargar los datos en el ticket
+        function cargarTicket() {
+            const data = getParams();
+            document.getElementById("pdfFecha").textContent = data.fecha;
+            document.getElementById("pdfNombre").textContent = data.nombre;
+            document.getElementById("pdfMedidor").textContent = data.medidor;
+            document.getElementById("pdfLecturaAnterior").textContent = data.lecturaAnterior;
+            document.getElementById("pdfLecturaActual").textContent = data.lecturaActual;
+            document.getElementById("pdfMetros").textContent = data.metros;
+            document.getElementById("pdfAsamblea").textContent = data.asamblea === 'Sí' ? 'Sí' : 'No';
+            document.getElementById("pdfMulta").textContent = data.multa === 'Sí' ? 'Sí' : 'No';
+            document.getElementById("pdfTotal").textContent = data.total;
+
+            // Generar el PDF después de un pequeño retraso
+            setTimeout(() => {
+                generarPDF();
+            }, 500);
+        }
+
+        // Función para generar el PDF
+        function generarPDF() {
+            const ticketElement = document.getElementById("ticketPDF");
+            const opt = {
+                margin: [10, -10, 0, -10],  // Ajuste de márgenes a 0 en todos los lados
+                filename: "ticket_pago.pdf",
+                image: { type: "jpeg", quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: "mm", format: "a4", orientation: "portrait" }
+            };
+
+            html2pdf().from(ticketElement).set(opt).save();
+        }
+
+        // Llamada a la función cargarTicket cuando la página haya cargado
+        window.onload = cargarTicket;
+    </script>
+</body>
+</html>
